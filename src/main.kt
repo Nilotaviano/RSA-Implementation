@@ -13,8 +13,6 @@ fun main(args: Array<String>)
         val encryptedMessage = rsa.encrypt(msg)
         val decryptedMessage = rsa.decrypt(encryptedMessage)
 
-        assert(msg.equals(decryptedMessage))
-
         println("Encrypted message: $encryptedMessage")
         println("Decrypted message: $decryptedMessage")
     }
