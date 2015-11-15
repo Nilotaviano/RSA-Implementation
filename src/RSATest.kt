@@ -43,7 +43,7 @@ class RSATest {
         var rsa = RSA(61, 53)
         val msg = "Testing RSA algorithm"
 
-        for (i in 1..1000) {
+        for (i in 1..100) {
             val encryptedMessage = rsa.encrypt(msg)
             assert(!msg.equals(encryptedMessage)) { "i: $i\nrsa:\n${rsa.toString()}" }
             rsa = RSA(61, 53)
@@ -55,7 +55,7 @@ class RSATest {
         var rsa = RSA(61, 53)
         val msg = "Testing RSA algorithm"
 
-        for (i in 1..1000) {
+        for (i in 1..100) {
             val encryptedMessage = rsa.encrypt(msg)
             val decryptedMessage = rsa.decrypt(encryptedMessage)
             assert(msg.equals(decryptedMessage)) { "i: $i, decrypted message: $decryptedMessage, \n rsa:\n${rsa.toString()}" }
