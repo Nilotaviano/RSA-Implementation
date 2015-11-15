@@ -4,8 +4,8 @@
  */
 import java.math.BigInteger
 // p cannot be 1
-val min = 2;
-val max = 255;
+val min = 96;
+val max = 127;
 
 fun isPrime(number: Int): Boolean {
     val sqrt: Int = (Math.sqrt(number.toDouble()) + 1).toInt()
