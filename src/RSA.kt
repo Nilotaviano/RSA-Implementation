@@ -3,15 +3,15 @@
  * Implementação do algoritmo de criptografia RSA
  */
 import java.math.BigInteger
-// p cannot be 1
-val min = 96;
-val max = 127;
+
+val min = 2;
+val max = 255;
 
 fun isPrime(number: Int): Boolean {
     val sqrt: Int = (Math.sqrt(number.toDouble()) + 1).toInt()
 
     for (i in 2..sqrt)
-        if ((number % i) == 0)
+        if (number != i && (number % i) == 0)
             return false
     return true
 }
@@ -41,12 +41,12 @@ class RSA(val p: Int, var q: Int) {
         var totientCoprimeModInverse: Int
 
         do {
-            totientCoprime = randomPrime(1, totient - 1)
+            totientCoprime = randomPrime(2, totient - 1)
 
             // Check if totientCoprime is actually coprime to totient
             // Get a net random prime otherwise
             while (BigInteger.valueOf(totientCoprime.toLong()).gcd(BigInteger.valueOf(totient.toLong())).toInt() != 1)
-                totientCoprime = randomPrime(1, totient - 1)
+                totientCoprime = randomPrime(2, totient - 1)
 
             totientCoprimeModInverse = BigInteger.valueOf(totientCoprime.toLong())
                     .modInverse(BigInteger.valueOf(totient.toLong())).toInt()
