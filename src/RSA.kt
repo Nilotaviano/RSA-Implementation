@@ -2,7 +2,7 @@
  * Created by Nilo Otaviano on 24/10/2015.
  * Implementação do algoritmo de criptografia RSA
  */
-
+import java.math.BigInteger
 // p cannot be 1
 val min = 2;
 val max = 255;
@@ -37,8 +37,8 @@ class RSA(val p: Int, var q: Int) {
             q = randomPrime(min, max)
 
         val totient: Int = (p - 1) * (q - 1)
-        var totientCoprime = 0
-        var totientCoprimeModInverse = 0
+        var totientCoprime: Int
+        var totientCoprimeModInverse: Int
 
         do {
             totientCoprime = randomPrime(1, totient - 1)
@@ -57,7 +57,7 @@ class RSA(val p: Int, var q: Int) {
     }
 
     fun encrypt(msg: String): String {
-        val encryptedMsg:MutableList<Char> = linkedListOf()
+        val encryptedMsg: MutableList<Char> = linkedListOf()
 
         for (b in msg) {
             // c = m^e (mod n)
@@ -69,7 +69,7 @@ class RSA(val p: Int, var q: Int) {
     }
 
     fun decrypt(msg: String): String {
-        val decryptedMsg:MutableList<Char> = linkedListOf()
+        val decryptedMsg: MutableList<Char> = linkedListOf()
 
         for (b in msg) {
             // c = m^d (mod n)

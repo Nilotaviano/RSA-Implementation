@@ -1,3 +1,5 @@
+import kotlin.test.assertFalse
+
 class RSATest {
 
     @org.junit.Test
@@ -20,7 +22,7 @@ class RSATest {
     fun testRandomPrime() {
         val min = 1
         var max = 255
-        var prime = 0
+        var prime: Int
 
         for (i in 1..256) {
             prime = randomPrime(min, max)
