@@ -4,7 +4,6 @@
  */
 import java.math.BigInteger
 
-// O(sqrt(n))
 fun isPrime(number: Int): Boolean {
     val sqrt: Int = (Math.sqrt(number.toDouble()) + 1).toInt()
 
