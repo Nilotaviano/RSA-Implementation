@@ -1,3 +1,7 @@
+/**
+ * Created by Nilo Otaviano on 14/11/2015.
+ * Unit tests
+ */
 class RSATest {
 
     @org.junit.Test

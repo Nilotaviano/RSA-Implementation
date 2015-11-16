@@ -1,6 +1,6 @@
 /**
  * Created by Nilo Otaviano on 24/10/2015.
- * Implementação do algoritmo de criptografia RSA
+ * RSA Algorithm implementation
  */
 import java.math.BigInteger
 
